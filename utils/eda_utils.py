@@ -123,3 +123,27 @@ def detectar_duplicados(df):
         }
 
     return resultados
+
+
+def winsorizar_iqr(df):
+    df_wins = df.copy()
+
+    columnas_numericas = df_wins.select_dtypes(include='number').columns
+
+    for col in columnas_numericas:
+        serie = df_wins[col]
+
+        Q1 = serie.quantile(0.25)
+        Q3 = serie.quantile(0.75)
+        IQR = Q3 - Q1
+
+        limite_inferior = Q1 - 1.5 * IQR
+        limite_superior = Q3 + 1.5 * IQR
+
+        # Winsorización
+        df_wins[col] = serie.clip(
+            lower=limite_inferior,
+            upper=limite_superior
+        )
+
+    return df_wins
