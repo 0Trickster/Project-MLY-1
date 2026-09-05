@@ -263,6 +263,16 @@ track_id
 time_signature
 ```
 
+Las siguientes variables si bien no se eliminaron en el apartado de limpieza ni en la ingeniería de datos, se eliminaron
+de manera implícita a través del `pipeline` de preprocesamiento con el comando `remainder_drop`:
+
+```text
+artists
+album_name
+track_name
+explicit
+```
+
 ---
 
 ## 3. Tratamiento de outliers
@@ -382,10 +392,10 @@ Las variables se dividen en tres grupos principales:
             │                │               │
             ▼                ▼               ▼
      BinaryEncoder     OrdinalEncoder   StandardScaler
-                              │
-                              ▼
-                        StandardScaler
-            │                │               │
+                             │
+                             ▼
+                      StandardScaler
+            │               │               │
             └───────────────┼───────────────┘
                             │
                             ▼
@@ -801,6 +811,6 @@ Actualmente el proyecto contempla las siguientes etapas:
 **Benjamín Aravena**
 **Gabriel Castillo**
 
-**Duoc UC — Machine Learning (DSY1101)**
+**Duoc UC — Machine Learning (MLY1101)**
 
 ---
