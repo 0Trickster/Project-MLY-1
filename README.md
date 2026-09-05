@@ -3,8 +3,11 @@
 # Machine Learning: Predicción de Popularidad Musical
 
 > **Asignatura:** Machine Learning (MLY1101)
+> 
 > **Sección:** MLY1101-002D
+> 
 > **Institución:** Duoc UC
+> 
 > **Integrantes:** Abel Aravena, Benjamín Aravena, Gabriel Castillo
 
 ---
